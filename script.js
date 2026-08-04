@@ -727,8 +727,8 @@ function animateParticles() {
     });
     requestAnimationFrame(animateParticles);
 }
-// Dynamic Days Missed Counter (Calculated from June 30, 2026 at 1:14 PM)
-const breakupDate = new Date('2026-06-30T13:14:00');
+// Dynamic Days Missed Counter (Calculated from June 30, 2026 at 1:05 PM)
+const breakupDate = new Date('2026-06-30T13:05:00');
 
 function updateDaysMissedCounter() {
     const now = new Date();
