@@ -727,7 +727,30 @@ function animateParticles() {
     });
     requestAnimationFrame(animateParticles);
 }
-animateParticles();
+// Dynamic Days Missed Counter (Calculated from June 30, 2026 at 1:14 PM)
+const breakupDate = new Date('2026-06-30T13:14:00');
+
+function updateDaysMissedCounter() {
+    const now = new Date();
+    const diffMs = now - breakupDate;
+    
+    if (diffMs < 0) {
+        const counterVal = document.getElementById('daysMissedVal');
+        if (counterVal) counterVal.textContent = "0 Days";
+        return;
+    }
+
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    const diffHours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const diffMins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+
+    const counterVal = document.getElementById('daysMissedVal');
+    if (counterVal) {
+        counterVal.textContent = `${diffDays} Days, ${diffHours}h, ${diffMins}m`;
+    }
+}
+updateDaysMissedCounter();
+setInterval(updateDaysMissedCounter, 60000);
 
 // Initial Card Render
 renderCurrentState();

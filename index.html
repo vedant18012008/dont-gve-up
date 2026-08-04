@@ -21,10 +21,9 @@
     <div class="music-controls">
         <button id="musicToggleBtn" class="music-btn" aria-label="Toggle Music">
             <span class="music-icon">🎵</span>
-            <span class="music-text">Play Song</span>
+            <span class="music-text">Play: Bairna (Suggested by Bubuuu 💖)</span>
         </button>
         <audio id="bgMusic" loop preload="auto">
-            <!-- Warm royalty-free romantic guitar/piano track or user custom audio -->
             <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-piano-112199.mp3" type="audio/mpeg">
         </audio>
     </div>
@@ -32,13 +31,20 @@
     <!-- Main Container -->
     <main class="app-container">
 
+        <!-- Dynamic Live Days Missed Counter Badge -->
+        <div class="days-counter-badge" id="daysCounterBadge">
+            <span class="pulse-dot"></span>
+            <span class="counter-label">Missing You, Bubuuu:</span>
+            <span class="counter-val" id="daysMissedVal">Loading...</span>
+        </div>
+
         <!-- Question Cards Wrapper -->
         <div class="card-stage">
             
             <div class="card-glass" id="mainCard">
                 <div class="card-emoji" id="cardEmoji">🥺</div>
                 
-                <h1 class="card-question" id="cardQuestion">Do you know how much you mean to me?</h1>
+                <h1 class="card-question" id="cardQuestion">Do you know how much you mean to me, Bubuuu?</h1>
                 
                 <p class="card-subtext" id="cardSubtext">Take a deep breath and hear me out...</p>
 
@@ -57,47 +63,59 @@
 
         </div>
 
-        <!-- Grand Finale Overlay (Hidden until Card 30 completed) -->
+        <!-- Grand Finale Overlay -->
         <section class="finale-container hidden" id="finaleContainer">
             <div class="finale-glass">
                 <div class="finale-header">
                     <div class="heart-ring">✨ ❤️ ✨</div>
-                    <h2 class="finale-title">I KNEW YOU WOULD SAY YES! 🎉</h2>
-                    <p class="finale-subtitle">Thank you for not giving up on us. You are my whole world.</p>
+                    <h2 class="finale-title">MY DEAREST BUBUUU... 🎉</h2>
+                    <p class="finale-subtitle">Thank you for going through every card. You are my whole world.</p>
                 </div>
 
                 <div class="love-letter-box">
                     <div class="letter-stamp">💌</div>
-                    <h3 class="letter-heading">My Dearest Love,</h3>
+                    <h3 class="letter-heading">My Dearest Bubuuu,</h3>
                     <p class="letter-body">
-                        Thank you for taking this journey through every card with me. Every single word came straight from the deepest corner of my heart.<br><br>
-                        I know things haven't always been easy, but losing you showed me just how incomplete my life is without your warmth, your smile, and your beautiful soul.<br><br>
-                        I promise to love you better, hold you tighter, listen more deeply, and cherish every single moment with you. Please come back home to my heart—let's make our story sweeter than ever before! ❤️
+                        Ever since June 30th, not a single day has passed where I haven't missed your smile, your warmth, and your voice. Every time I listen to <i>Bairna</i>—the song you suggested to me—my heart takes me right back to you.<br><br>
+                        Every single word in these cards came straight from my heart. I know things haven't always been easy, but losing you showed me just how empty my life is without you.<br><br>
+                        I promise to love you better, hold you tighter, listen deeper, and cherish every moment with you. Please come back home to my heart—let's make our story sweeter than ever before! ❤️
                     </p>
                     <div class="letter-signature">Forever Yours ✨</div>
                 </div>
 
-                <!-- Memory Photos Showcase -->
+                <!-- Shared Story Timeline Showcase -->
                 <div class="memories-section">
-                    <h4 class="section-title">📸 Our Precious Moments</h4>
-                    <div class="memory-grid">
-                        <div class="memory-card">
-                            <div class="photo-placeholder">
-                                <span>💖</span>
-                                <p>Our Cute Laughs</p>
-                            </div>
+                    <h4 class="section-title">✨ Our Precious Moments Together</h4>
+                    <div class="timeline-grid">
+                        <div class="timeline-card">
+                            <div class="timeline-icon">🪁</div>
+                            <h5 class="timeline-title">Uttarayan & The Balcony</h5>
+                            <p class="timeline-desc">Seeing you standing there in your blue-green shirt... everything else vanished.</p>
                         </div>
-                        <div class="memory-card">
-                            <div class="photo-placeholder">
-                                <span>✨</span>
-                                <p>Endless Conversations</p>
-                            </div>
+                        <div class="timeline-card">
+                            <div class="timeline-icon">🌳</div>
+                            <h5 class="timeline-title">CH-0 Garden Bench</h5>
+                            <p class="timeline-desc">Sitting beside you on that quiet bench was literally the best moment of my life.</p>
                         </div>
-                        <div class="memory-card">
-                            <div class="photo-placeholder">
-                                <span>🌹</span>
-                                <p>Forever & Always</p>
-                            </div>
+                        <div class="timeline-card">
+                            <div class="timeline-icon">🌸</div>
+                            <h5 class="timeline-title">Sargasan Garden Hug</h5>
+                            <p class="timeline-desc">Placing my head on your shoulder feeling that calm, beautiful relaxation wash over me.</p>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-icon">😂</div>
+                            <h5 class="timeline-title">The "Varun Dhawan" Slip-Up</h5>
+                            <p class="timeline-desc">I got so excited to meet you my tongue got tied, and hearing you laugh made my heart melt.</p>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-icon">👗</div>
+                            <h5 class="timeline-title">Pink Polka Dot Dress</h5>
+                            <p class="timeline-desc">Holding you close from behind in the lobby—a sweet moment away from the world's eyes.</p>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-icon">💖</div>
+                            <h5 class="timeline-title">A Forever Promise</h5>
+                            <p class="timeline-desc">Every memory is a piece of my heart. I will do everything to win you back.</p>
                         </div>
                     </div>
                 </div>

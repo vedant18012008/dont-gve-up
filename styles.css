@@ -370,34 +370,92 @@ body {
     letter-spacing: 1px;
 }
 
-.memory-grid {
+/* Days Missed Counter Badge */
+.days-counter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 75, 114, 0.15);
+    border: 1px solid rgba(255, 75, 114, 0.4);
+    padding: 8px 18px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(255, 75, 114, 0.2);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-pink);
+    border-radius: 50%;
+    box-shadow: 0 0 0 rgba(255, 75, 114, 0.7);
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 75, 114, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 75, 114, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 75, 114, 0);
+    }
+}
+
+.counter-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.counter-val {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+}
+
+/* Story Timeline Grid */
+.timeline-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 15px;
 }
 
-.memory-card {
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 14px;
-    padding: 14px 8px;
+.timeline-card {
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: left;
+    transition: all 0.3s ease;
 }
 
-.memory-card:hover {
-    transform: translateY(-4px);
+.timeline-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.08);
     border-color: var(--primary-pink);
 }
 
-.photo-placeholder span {
-    font-size: 1.6rem;
-    display: block;
-    margin-bottom: 4px;
+.timeline-icon {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
 }
 
-.photo-placeholder p {
-    font-size: 0.75rem;
+.timeline-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.timeline-desc {
+    font-size: 0.82rem;
     color: var(--text-muted);
+    line-height: 1.5;
 }
 
 .coupons-grid {
