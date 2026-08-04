@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please Come Back ❤️ | A Letter From My Heart</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- Ambient Heart Background Canvas -->
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- Music Player Floating Controls -->
+    <div class="music-controls">
+        <button id="musicToggleBtn" class="music-btn" aria-label="Toggle Music">
+            <span class="music-icon">🎵</span>
+            <span class="music-text">Play Song</span>
+        </button>
+        <audio id="bgMusic" loop preload="auto">
+            <!-- Warm royalty-free romantic guitar/piano track or user custom audio -->
+            <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-piano-112199.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Main Container -->
+    <main class="app-container">
+
+        <!-- Question Cards Wrapper -->
+        <div class="card-stage">
+            
+            <div class="card-glass" id="mainCard">
+                <div class="card-emoji" id="cardEmoji">🥺</div>
+                
+                <h1 class="card-question" id="cardQuestion">Do you know how much you mean to me?</h1>
+                
+                <p class="card-subtext" id="cardSubtext">Take a deep breath and hear me out...</p>
+
+                <!-- Interactive Choice Buttons -->
+                <div class="buttons-group">
+                    <button class="btn btn-yes" id="yesBtn">
+                        <span class="btn-text" id="yesBtnText">Yes ❤️</span>
+                        <span class="btn-glow"></span>
+                    </button>
+
+                    <button class="btn btn-no" id="noBtn">
+                        <span class="btn-text" id="noBtnText">No 🙈</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Grand Finale Overlay (Hidden until Card 30 completed) -->
+        <section class="finale-container hidden" id="finaleContainer">
+            <div class="finale-glass">
+                <div class="finale-header">
+                    <div class="heart-ring">✨ ❤️ ✨</div>
+                    <h2 class="finale-title">I KNEW YOU WOULD SAY YES! 🎉</h2>
+                    <p class="finale-subtitle">Thank you for not giving up on us. You are my whole world.</p>
+                </div>
+
+                <div class="love-letter-box">
+                    <div class="letter-stamp">💌</div>
+                    <h3 class="letter-heading">My Dearest Love,</h3>
+                    <p class="letter-body">
+                        Thank you for taking this journey through every card with me. Every single word came straight from the deepest corner of my heart.<br><br>
+                        I know things haven't always been easy, but losing you showed me just how incomplete my life is without your warmth, your smile, and your beautiful soul.<br><br>
+                        I promise to love you better, hold you tighter, listen more deeply, and cherish every single moment with you. Please come back home to my heart—let's make our story sweeter than ever before! ❤️
+                    </p>
+                    <div class="letter-signature">Forever Yours ✨</div>
+                </div>
+
+                <!-- Memory Photos Showcase -->
+                <div class="memories-section">
+                    <h4 class="section-title">📸 Our Precious Moments</h4>
+                    <div class="memory-grid">
+                        <div class="memory-card">
+                            <div class="photo-placeholder">
+                                <span>💖</span>
+                                <p>Our Cute Laughs</p>
+                            </div>
+                        </div>
+                        <div class="memory-card">
+                            <div class="photo-placeholder">
+                                <span>✨</span>
+                                <p>Endless Conversations</p>
+                            </div>
+                        </div>
+                        <div class="memory-card">
+                            <div class="photo-placeholder">
+                                <span>🌹</span>
+                                <p>Forever & Always</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Love Coupons -->
+                <div class="coupons-section">
+                    <h4 class="section-title">🎁 Love Coupons (Click to Redeem!)</h4>
+                    <div class="coupons-grid">
+                        <button class="coupon-btn" onclick="redeemCoupon(this, 'Unlimited Hugs 🫂')">
+                            <span>🫂</span> Unlimited Hugs
+                        </button>
+                        <button class="coupon-btn" onclick="redeemCoupon(this, 'Midnight Ice Cream Date 🍦')">
+                            <span>🍦</span> Ice Cream Date
+                        </button>
+                        <button class="coupon-btn" onclick="redeemCoupon(this, 'Forgive Me Ticket 🎫')">
+                            <span>🎫</span> Forgive Me Card
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Reconnect & Unblock Contact Card -->
+                <div class="reconnect-card" id="reconnectCard">
+                    <div class="reconnect-badge">💌 One Last Request</div>
+                    <h4 class="reconnect-title">Please Give Us Another Chance ❤️</h4>
+                    <p class="reconnect-text">
+                        If your heart still feels a spark for us, please unblock me on Instagram and WhatsApp. Let's talk, laugh, and fix everything together.
+                    </p>
+
+                    <div class="contact-links">
+                        <a href="https://instagram.com/your_insta_id" target="_blank" class="contact-btn insta-btn" id="instaLink">
+                            <span class="contact-icon">📸</span>
+                            <div class="contact-info">
+                                <span class="contact-label">Instagram ID</span>
+                                <span class="contact-value" id="instaVal">@your_insta_id</span>
+                            </div>
+                        </a>
+
+                        <a href="https://wa.me/your_phone_number" target="_blank" class="contact-btn phone-btn" id="phoneLink">
+                            <span class="contact-icon">💬</span>
+                            <div class="contact-info">
+                                <span class="contact-label">WhatsApp / Phone</span>
+                                <span class="contact-value" id="phoneVal">+1 234 567 8900</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <button class="btn btn-restart" id="restartBtn">🔄 Replay Our Journey</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

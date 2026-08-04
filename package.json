@@ -1,0 +1,12 @@
+{
+  "name": "please-come-back-love",
+  "version": "1.0.0",
+  "description": "An interactive 30-card romantic journey website to bring back your special person.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": ["love", "romantic", "cards", "vercel", "interactive"],
+  "author": "",
+  "license": "MIT"
+}
